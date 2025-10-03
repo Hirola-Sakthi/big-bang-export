@@ -66,41 +66,115 @@
                                 </div>
                             </div>
                         </a> -->
+               <div class="nav-dropdown w-dropdown" id="productsDropdown">
+                <div class="nav-dropdown-toggle w-dropdown-toggle">
+                  <div class="clip nav">
+                    <div class="button-text-wrap nav">
+                      <a href="/products.html">
+                        <p class="nav-item-title">Products</p>
+                      </a>
+                      <img
+                        src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
+                        loading="lazy"
+                        alt="icon"
+                        class="nav-arrow"
+                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
+                      />
+                    </div>
+                    <div class="button-text-wrap bottom-wrap">
+                      <a href="/products.html">
+                        <p class="nav-item-title">Products</p>
+                      </a>
+                      <img
+                        src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
+                        loading="lazy"
+                        alt="icon"
+                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <nav class="nav-dropdown-list w-dropdown-list">
+                  <div class="nav-dropdown-link-wrapper">
+                    <div
+                      class="nav-dropdown-item-with-sub"
+                      data-submenu="agro-menu"
+                    >
+                      <a
+                        href="javascript:void(0)"
+                        class="nav-dropdown-link2 w-dropdown-link"
+                        onclick="toggleSubmenu(this, event)"
+                      >
+                        Agro Processed Foods
+                        <span class="submenu-arrow">▶</span>
+                      </a>
+                    </div>
 
+                    <div
+                      class="nav-dropdown-item-with-sub"
+                      data-submenu="minerals-menu"
+                    >
+                      <a
+                        href="javascript:void(0)"
+                        class="nav-dropdown-link2 w-dropdown-link"
+                        onclick="toggleSubmenu(this, event)"
+                      >
+                        Minerals & Metals <span class="submenu-arrow">▶</span>
+                      </a>
+                    </div>
 
-                        <div data-hover="true" data-delay="0" data-w-id="ba67b287-f196-4627-29a8-f080f7e8b145"
-                            class="nav-dropdown w-dropdown">
-                            <div data-w-id="ba67b287-f196-4627-29a8-f080f7e8b146"
-                                class="nav-dropdown-toggle w-dropdown-toggle">
-                                <div class="clip nav">
-                                    <div class="button-text-wrap nav">
-                                        <p class="nav-item-title">Products</p><img
-                                            src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg" loading="lazy"
-                                            alt="icon" class="nav-arrow">
-                                    </div>
-                                    <div class="button-text-wrap bottom-wrap">
-                                        <p class="nav-item-title">Products</p><img
-                                            src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg" loading="lazy"
-                                            alt="icon">
-                                    </div>
-                                </div>
-                            </div>
-                            <nav class="nav-dropdown-list w-dropdown-list">
-                                <div class="nav-dropdown-link-wrapper">
-                                    <a href="/products.html" aria-current="page"
-                                        class="nav-dropdown-link2 w-dropdown-link w--current">
-                                        <span class="nav-dropdown-link-line"> </span>Products</a>
-                                    <a href="agro-processed-food.html" class="nav-dropdown-link2 w-dropdown-link">
-                                        <span class="nav-dropdown-link-line"> </span>Agro Processed Foods</a>
-                                    <a href="/minerals-metals.html" class="nav-dropdown-link2 w-dropdown-link">
-                                        <span class="nav-dropdown-link-line"> </span>Minerals & Metals</a>
-                                    <a href="/textiles.html" class="nav-dropdown-link2 w-dropdown-link">
-                                        <span class="nav-dropdown-link-line"> </span>Textiles</a>
-                                    <a href="/product/granite-and-marbles.html" class="nav-dropdown-link2 w-dropdown-link">
-                                        <span class="nav-dropdown-link-line"> </span>Granites & Marbles</a>
-                                </div>
-                            </nav>
-                        </div>
+                    <div
+                      class="nav-dropdown-item-with-sub"
+                      data-submenu="textiles-menu"
+                    >
+                      <a
+                        href="javascript:void(0)"
+                        class="nav-dropdown-link2 w-dropdown-link"
+                        onclick="toggleSubmenu(this, event)"
+                      >
+                        Textiles <span class="submenu-arrow">▶</span>
+                      </a>
+                    </div>
+
+                    <a
+                      href="/product/granite-and-marbles.html"
+                      class="nav-dropdown-link2 w-dropdown-link"
+                    >
+                      Granites & Marbles
+                    </a>
+                  </div>
+                </nav>
+              </div>
+              <div id="agro-menu" class="flyout-menu">
+                <a href="/product/rice.html">Rice</a>
+                <a href="/product/jaggery.html">Jaggery</a>
+                <a href="/product/sugar.html">Sugar</a>
+                <a href="/product/soyabeans.html">Soyabeans</a>
+                <a href="/product/coconut-powder.html">Coconut Powder</a>
+                <a href="/product/dried-fruits.html">Dried Fruits</a>
+                <a href="/product/ghee.html">Ghee</a>
+                <a href="/product/honey.html">Honey</a>
+                <a href="/product/paneer.html">Paneer</a>
+                <a href="/product/french-fries.html">French Fries</a>
+                <a href="/product/maida-flour.html">Maida Flour</a>
+                <a href="/product/spice-powders.html">Spice Powders</a>
+                <a href="/product/coffee-powder-and-coffee-beans.html"
+                  >Coffee Powder</a
+                >
+              </div>
+
+              <div id="minerals-menu" class="flyout-menu">
+                <a href="/product/quartz.html">Quartz</a>
+                <a href="/product/iron-ore.html">Iron Ore</a>
+              </div>
+
+              <div id="textiles-menu" class="flyout-menu">
+                <a href="/product/ready-made-garments.html"
+                  >Ready Made Garments</a
+                >
+                <a href="/product/woven-fabrics.html">Woven Fabrics</a>
+                <a href="/product/knitted-fabrics.html">Knitted Fabrics</a>
+              </div>
                         <a data-w-id="16554bba-2364-14e7-9eb7-a198784f140b" href="/faqs.html"
                             class="nav-link w-inline-block">
                             <div class="clip">
@@ -518,6 +592,41 @@
     <script src="js/common-script-two.js" type="text/javascript"></script>
     <script src="js/common-script.js" type="text/javascript"></script>
     <script src="js/common.js" type="text/javascript"></script>
+     <!-- JS -->
+    <script>
+  function toggleDropdown(element, dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const dropdownList = dropdown.querySelector(".nav-dropdown-list");
+    const isOpen = dropdownList.style.display === "flex";
+    dropdownList.style.display = isOpen ? "none" : "flex";
+    document.querySelectorAll(".flyout-menu").forEach((f) => (f.style.display = "none"));
+  }
+  function toggleSubmenu(element, event) {
+    event.stopPropagation();
+    const submenuId = element.parentElement.dataset.submenu;
+    const submenu = document.getElementById(submenuId);
+
+    const isMobile = window.innerWidth <= 768;
+    const isOpen = submenu.style.display === "block";
+    document.querySelectorAll(".flyout-menu").forEach((f) => {
+      if (f.id !== submenuId) f.style.display = "none";
+    });
+
+    submenu.style.display = isOpen ? "none" : "block";
+    submenu.style.top = isMobile ? "auto" : "50px";
+    submenu.style.left = isMobile ? "auto" : "400px";
+  }
+  document.addEventListener("click", function (event) {
+    const dropdown = document.getElementById("productsDropdown");
+    if (!dropdown.contains(event.target)) {
+      dropdown.querySelector(".nav-dropdown-list").style.display = "none";
+      document.querySelectorAll(".flyout-menu").forEach((f) => (f.style.display = "none"));
+    }
+  });
+
+  window.addEventListener("resize", adjustFlyoutHeight);
+  window.addEventListener("load", adjustFlyoutHeight);
+</script>
 </body>
 
 </html>
