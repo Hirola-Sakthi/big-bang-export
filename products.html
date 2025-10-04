@@ -128,35 +128,42 @@
                                 </div>
                             </div>
                         </a> -->
-              <div class="nav-dropdown w-dropdown" id="productsDropdown">
-                <div class="nav-dropdown-toggle w-dropdown-toggle">
+              <div
+                data-hover="true"
+                data-delay="0"
+                data-w-id="ba67b287-f196-4627-29a8-f080f7e8b145"
+                class="nav-dropdown w-dropdown"
+              >
+                <div
+                  data-w-id="ba67b287-f196-4627-29a8-f080f7e8b146"
+                  class="nav-dropdown-toggle w-dropdown-toggle"
+                >
                   <div class="clip nav">
                     <div class="button-text-wrap nav">
                       <a href="/products.html">
-                        <p class="nav-item-title black">Products</p>
-                      </a>
+                        <p class="nav-item-title black">Products</p></a
+                      >
                       <img
                         src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
                         loading="lazy"
                         alt="icon"
                         class="nav-arrow black"
-                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
                       />
                     </div>
                     <div class="button-text-wrap bottom-wrap">
                       <a href="/products.html">
-                        <p class="nav-item-title black">Products</p>
-                      </a>
+                        <p class="nav-item-title black">Products</p></a
+                      >
                       <img
                         src="images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
                         loading="lazy"
                         alt="icon"
                         class="nav-arrow black"
-                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
                       />
                     </div>
                   </div>
                 </div>
+
                 <nav class="nav-dropdown-list w-dropdown-list">
                   <div class="nav-dropdown-link-wrapper">
                     <div
@@ -165,10 +172,10 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Agro Processed Foods
+                        <span class="nav-dropdown-link-line"></span>Agro
+                        Processed Foods
                         <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
@@ -179,10 +186,11 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Minerals & Metals <span class="submenu-arrow">▶</span>
+                        <span class="nav-dropdown-link-line"></span>Minerals &
+                        Metals
+                        <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
 
@@ -192,19 +200,22 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Textiles <span class="submenu-arrow">▶</span>
+                        <span class="nav-dropdown-link-line"></span>Textiles
+                        <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
 
-                    <a
-                      href="/product/granite-and-marbles.html"
-                      class="nav-dropdown-link2 w-dropdown-link"
-                    >
-                      Granites & Marbles
-                    </a>
+                    <div class="nav-dropdown-item-with-sub">
+                      <a
+                        href="/product/granite-and-marbles.html"
+                        class="nav-dropdown-link w-dropdown-link"
+                      >
+                        <span class="nav-dropdown-link-line"></span>Granites &
+                        Marbles
+                      </a>
+                    </div>
                   </div>
                 </nav>
               </div>
@@ -3938,42 +3949,68 @@
     </script>
     <!-- JS -->
     <script>
-      function toggleDropdown(element, dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-        const dropdownList = dropdown.querySelector(".nav-dropdown-list");
-        const isOpen = dropdownList.style.display === "flex";
-        dropdownList.style.display = isOpen ? "none" : "flex";
-        document
-          .querySelectorAll(".flyout-menu")
-          .forEach((f) => (f.style.display = "none"));
-      }
-      function toggleSubmenu(element, event) {
-        event.stopPropagation();
-        const submenuId = element.parentElement.dataset.submenu;
-        const submenu = document.getElementById(submenuId);
+      document
+        .querySelectorAll(".nav-dropdown-item-with-sub")
+        .forEach((item) => {
+          const submenuId = item.dataset.submenu;
+          const submenu = document.getElementById(submenuId);
+          if (!submenu) return;
+          if (window.innerWidth <= 768) {
+            submenu.style.display = "none";
+            submenu.style.position = "static";
+          }
+          const showSubmenu = () => {
+            if (window.innerWidth > 768) {
+              submenu.style.display = "block";
+              submenu.style.position = "absolute";
+              submenu.style.top = "50.2px";
+              submenu.style.left = "410.776px";
+            }
+          };
 
-        const isMobile = window.innerWidth <= 768;
-        const isOpen = submenu.style.display === "block";
-        document.querySelectorAll(".flyout-menu").forEach((f) => {
-          if (f.id !== submenuId) f.style.display = "none";
+          const hideSubmenu = () => {
+            if (window.innerWidth > 768) {
+              submenu.style.display = "none";
+            }
+          };
+          item.addEventListener("mouseenter", showSubmenu);
+          submenu.addEventListener("mouseenter", showSubmenu);
+
+          item.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!submenu.matches(":hover") && !item.matches(":hover"))
+                hideSubmenu();
+            }, 100);
+          });
+
+          submenu.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!submenu.matches(":hover") && !item.matches(":hover"))
+                hideSubmenu();
+            }, 100);
+          });
+
+          item.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen =
+                window.getComputedStyle(submenu).display === "block";
+              document
+                .querySelectorAll(".flyout-menu")
+                .forEach((f) => (f.style.display = "none"));
+              submenu.style.display = isOpen ? "none" : "block";
+              submenu.style.position = "static";
+            }
+          });
         });
 
-        submenu.style.display = isOpen ? "none" : "block";
-        submenu.style.top = isMobile ? "auto" : "50px";
-        submenu.style.left = isMobile ? "auto" : "400px";
-      }
-      document.addEventListener("click", function (event) {
-        const dropdown = document.getElementById("productsDropdown");
-        if (!dropdown.contains(event.target)) {
-          dropdown.querySelector(".nav-dropdown-list").style.display = "none";
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".nav-dropdown")) {
           document
             .querySelectorAll(".flyout-menu")
             .forEach((f) => (f.style.display = "none"));
         }
       });
-
-      window.addEventListener("resize", adjustFlyoutHeight);
-      window.addEventListener("load", adjustFlyoutHeight);
     </script>
   </body>
 </html>

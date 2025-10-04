@@ -157,35 +157,43 @@
                                 </div>
                             </div>
                         </a> -->
-              <div class="nav-dropdown w-dropdown" id="productsDropdown">
-                <div class="nav-dropdown-toggle w-dropdown-toggle">
+
+              <div
+                data-hover="true"
+                data-delay="0"
+                data-w-id="ba67b287-f196-4627-29a8-f080f7e8b145"
+                class="nav-dropdown w-dropdown"
+              >
+                <div
+                  data-w-id="ba67b287-f196-4627-29a8-f080f7e8b146"
+                  class="nav-dropdown-toggle w-dropdown-toggle"
+                >
                   <div class="clip nav">
                     <div class="button-text-wrap nav">
                       <a href="/products.html">
-                        <p class="nav-item-title black">Products</p>
-                      </a>
+                        <p class="nav-item-title black">Products</p></a
+                      >
                       <img
                         src="../images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
                         loading="lazy"
                         alt="icon"
                         class="nav-arrow black"
-                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
                       />
                     </div>
                     <div class="button-text-wrap bottom-wrap">
                       <a href="/products.html">
-                        <p class="nav-item-title black">Products</p>
-                      </a>
+                        <p class="nav-item-title black">Products</p></a
+                      >
                       <img
                         src="../images/67ee998a353426309c7bba40_Frame%20%2847%29.svg"
                         loading="lazy"
                         alt="icon"
                         class="nav-arrow black"
-                        onclick="event.preventDefault(); toggleDropdown(this, 'productsDropdown')"
                       />
                     </div>
                   </div>
                 </div>
+
                 <nav class="nav-dropdown-list w-dropdown-list">
                   <div class="nav-dropdown-link-wrapper">
                     <div
@@ -194,10 +202,10 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Agro Processed Foods
+                        <span class="nav-dropdown-link-line"></span>Agro
+                        Processed Foods
                         <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
@@ -208,10 +216,11 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Minerals & Metals <span class="submenu-arrow">▶</span>
+                        <span class="nav-dropdown-link-line"></span>Minerals &
+                        Metals
+                        <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
 
@@ -221,19 +230,22 @@
                     >
                       <a
                         href="javascript:void(0)"
-                        class="nav-dropdown-link2 w-dropdown-link"
-                        onclick="toggleSubmenu(this, event)"
+                        class="nav-dropdown-link w-dropdown-link"
                       >
-                        Textiles <span class="submenu-arrow">▶</span>
+                        <span class="nav-dropdown-link-line"></span>Textiles
+                        <span class="submenu-arrow">▶</span>
                       </a>
                     </div>
 
-                    <a
-                      href="/product/granite-and-marbles.html"
-                      class="nav-dropdown-link2 w-dropdown-link"
-                    >
-                      Granites & Marbles
-                    </a>
+                    <div class="nav-dropdown-item-with-sub">
+                      <a
+                        href="/product/granite-and-marbles.html"
+                        class="nav-dropdown-link w-dropdown-link"
+                      >
+                        <span class="nav-dropdown-link-line"></span>Granites &
+                        Marbles
+                      </a>
+                    </div>
                   </div>
                 </nav>
               </div>
@@ -267,7 +279,6 @@
                 <a href="/product/woven-fabrics.html">Woven Fabrics</a>
                 <a href="/product/knitted-fabrics.html">Knitted Fabrics</a>
               </div>
-
               <div
                 data-hover="true"
                 data-delay="0"
@@ -524,7 +535,7 @@
               </p>
             </div>
           </div>
-          <div class="service-page-services-wrapper">
+          <div class="service-page-services-wrapper border">
             <h3
               class="text-center"
               data-w-id="d5ce8c40-6487-6252-5059-60c2158cec48"
@@ -539,10 +550,9 @@
             >
               <div class="form-block-contacts w-form">
                 <form
-                  id="email-form"
-                  name="email-form"
-                  data-name="Email Form"
-                  method="get"
+                  id="contactForm"
+                  action="/bigbang-forms.php"
+                  method="POST"
                   class="form-contacts"
                   data-wf-page-id="67ee63cb3895632eb840c985"
                   data-wf-element-id="ea41af14-8b87-8ae8-ae5d-f8373dc8aafa"
@@ -551,7 +561,7 @@
                     <input
                       class="contacts-input w-input"
                       maxlength="256"
-                      name="name"
+                      name="firstName"
                       data-name="Name"
                       placeholder="First name"
                       type="text"
@@ -560,7 +570,7 @@
                     /><input
                       class="contacts-input w-node-f39860b9-71e8-57df-170e-ac440b21e172-b840c985 w-input"
                       maxlength="256"
-                      name="name-2"
+                      name="lastName"
                       data-name="Name 2"
                       placeholder="Last name"
                       type="text"
@@ -569,7 +579,7 @@
                     /><input
                       class="contacts-input w-input"
                       maxlength="256"
-                      name="Phone"
+                      name="phone"
                       data-name="Phone"
                       placeholder="Your phone"
                       type="tel"
@@ -590,7 +600,7 @@
                     placeholder="Your text"
                     maxlength="5000"
                     id="field"
-                    name="field"
+                    name="message"
                     data-name="field"
                     required=""
                     class="contacts-textarea w-input"
@@ -602,14 +612,6 @@
                     value="Submit"
                   />
                 </form>
-                <div class="success-message w-form-done">
-                  <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="error-message w-form-fail">
-                  <div>
-                    Oops! Something went wrong while submitting the form.
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -856,44 +858,118 @@
     <script src="../js/common-script-two.js" type="text/javascript"></script>
     <script src="../js/common-script.js" type="text/javascript"></script>
     <script src="../js/common.js" type="text/javascript"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const submitButton = form.querySelector('input[type="submit"]');
+          submitButton.value = "Submitting...";
+          submitButton.disabled = true;
+          const formData = new FormData(form);
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((text) => {
+              console.log("response", text);
+              let data = {};
+              try {
+                data = JSON.parse(text);
+              } catch (error) {
+                alert("Invalid JSON Response from the server");
+                throw error;
+              }
+              if (data.status === "success") {
+                window.location.href =
+                  "https://www.bigbangexports.com/thankyou.html";
+              } else {
+                if (data.error) {
+                  if (data.error.phone) alert(data.error.phone);
+                  if (data.error.name) alert(data.error.name);
+                } else {
+                  alert(data.message || "An error occured");
+                  form.reset();
+                }
+              }
+            })
+            .catch((error) => {
+              console.log("Error", error);
+              console.log("Something went wrong. Please try again.");
+              form.reset();
+            })
+            .finally(() => {
+              submitButton.value = "Submit";
+              submitButton.disabled = false;
+            });
+        });
+      });
+    </script>
     <!-- JS -->
     <script>
-      function toggleDropdown(element, dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-        const dropdownList = dropdown.querySelector(".nav-dropdown-list");
-        const isOpen = dropdownList.style.display === "flex";
-        dropdownList.style.display = isOpen ? "none" : "flex";
-        document
-          .querySelectorAll(".flyout-menu")
-          .forEach((f) => (f.style.display = "none"));
-      }
-      function toggleSubmenu(element, event) {
-        event.stopPropagation();
-        const submenuId = element.parentElement.dataset.submenu;
-        const submenu = document.getElementById(submenuId);
+      document
+        .querySelectorAll(".nav-dropdown-item-with-sub")
+        .forEach((item) => {
+          const submenuId = item.dataset.submenu;
+          const submenu = document.getElementById(submenuId);
+          if (!submenu) return;
+          if (window.innerWidth <= 768) {
+            submenu.style.display = "none";
+            submenu.style.position = "static";
+          }
+          const showSubmenu = () => {
+            if (window.innerWidth > 768) {
+              submenu.style.display = "block";
+              submenu.style.position = "absolute";
+              submenu.style.top = "50.2px";
+              submenu.style.left = "410.776px";
+            }
+          };
 
-        const isMobile = window.innerWidth <= 768;
-        const isOpen = submenu.style.display === "block";
-        document.querySelectorAll(".flyout-menu").forEach((f) => {
-          if (f.id !== submenuId) f.style.display = "none";
+          const hideSubmenu = () => {
+            if (window.innerWidth > 768) {
+              submenu.style.display = "none";
+            }
+          };
+          item.addEventListener("mouseenter", showSubmenu);
+          submenu.addEventListener("mouseenter", showSubmenu);
+
+          item.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!submenu.matches(":hover") && !item.matches(":hover"))
+                hideSubmenu();
+            }, 100);
+          });
+
+          submenu.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!submenu.matches(":hover") && !item.matches(":hover"))
+                hideSubmenu();
+            }, 100);
+          });
+
+          item.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen =
+                window.getComputedStyle(submenu).display === "block";
+              document
+                .querySelectorAll(".flyout-menu")
+                .forEach((f) => (f.style.display = "none"));
+              submenu.style.display = isOpen ? "none" : "block";
+              submenu.style.position = "static";
+            }
+          });
         });
 
-        submenu.style.display = isOpen ? "none" : "block";
-        submenu.style.top = isMobile ? "auto" : "50px";
-        submenu.style.left = isMobile ? "auto" : "400px";
-      }
-      document.addEventListener("click", function (event) {
-        const dropdown = document.getElementById("productsDropdown");
-        if (!dropdown.contains(event.target)) {
-          dropdown.querySelector(".nav-dropdown-list").style.display = "none";
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".nav-dropdown")) {
           document
             .querySelectorAll(".flyout-menu")
             .forEach((f) => (f.style.display = "none"));
         }
       });
-
-      window.addEventListener("resize", adjustFlyoutHeight);
-      window.addEventListener("load", adjustFlyoutHeight);
     </script>
   </body>
 </html>
